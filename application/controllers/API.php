@@ -6,9 +6,9 @@ class API extends CI_Controller{
 
 		$this->load->model("API_model");
 		$data=$this->API_model->get_client_data();
-		print_r($data);
-		//return $this->response->setStatusCode(200)->setJSON($data);
-		return json_encode($data);
+		$arr=json_encode($data);
+		print($arr);
+		return $arr;
 		
 	}
 
@@ -23,9 +23,9 @@ class API extends CI_Controller{
 	public function client_gallery(){
 		$this->load->model("API_model");
 		$data=$this->API_model->get_client_gallery();
-		print_r($data);
 		//return $this->response->setStatusCode(200)->setJSON($data);
-		return json_encode($data);
+		$new=json_encode($data);
+		return $new;
 	}
 }
 ?>
